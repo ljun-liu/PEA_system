@@ -1,0 +1,154 @@
+WORD RECOGNITION PERFORMANCE of Fricatives
+
+Percent Total Error       =   17.6%   ( 184)
+
+Percent Correct           =   83.7%   ( 875)
+
+Percent Substitution      =   12.5%   ( 131)
+Percent Deletions         =    3.8%   (  40)
+Percent Insertions        =    1.2%   (  13)
+Percent Word Accuracy     =   82.4%   
+
+
+Ref. words                =           (1046)
+Hyp. words                =           (1019)
+Aligned words             =           (1059)
+
+CONFUSION PAIRS                  Total                 (51)
+                                 With >=  1 occurances (51)
+
+   1:   24  ->  z ==> s
+   2:   14  ->  s ==> z
+   3:    8  ->  dh ==> d
+   4:    6  ->  th ==> t
+   5:    5  ->  v ==> b
+   6:    4  ->  sh ==> ch
+   7:    3  ->  dh ==> z
+   8:    3  ->  dh ==> t
+   9:    3  ->  s ==> ch
+  10:    3  ->  v ==> m
+  11:    3  ->  v ==> dx
+  12:    3  ->  z ==> sh
+  13:    2  ->  dh ==> v
+  14:    2  ->  dh ==> sil
+  15:    2  ->  dh ==> dx
+  16:    2  ->  f ==> sil
+  17:    2  ->  f ==> p
+  18:    2  ->  f ==> v
+  19:    2  ->  s ==> t
+  20:    2  ->  sh ==> s
+  21:    2  ->  th ==> s
+  22:    2  ->  th ==> dh
+  23:    2  ->  v ==> f
+  24:    2  ->  v ==> dh
+  25:    2  ->  z ==> sil
+  26:    1  ->  dh ==> b
+  27:    1  ->  dh ==> l
+  28:    1  ->  dh ==> n
+  29:    1  ->  f ==> d
+  30:    1  ->  f ==> eh
+  31:    1  ->  f ==> th
+  32:    1  ->  f ==> s
+  33:    1  ->  h ==> dx
+  34:    1  ->  h ==> f
+  35:    1  ->  h ==> iy
+  36:    1  ->  h ==> ch
+  37:    1  ->  s ==> sh
+  38:    1  ->  s ==> jh
+  39:    1  ->  sh ==> h
+  40:    1  ->  sh ==> t
+  41:    1  ->  th ==> d
+  42:    1  ->  th ==> f
+  43:    1  ->  th ==> sil
+  44:    1  ->  th ==> p
+  45:    1  ->  v ==> s
+  46:    1  ->  v ==> ow
+  47:    1  ->  v ==> ay
+  48:    1  ->  v ==> l
+  49:    1  ->  z ==> f
+  50:    1  ->  z ==> ih
+  51:    1  ->  z ==> dh
+     -------
+       131
+
+
+
+INSERTIONS                       Total                 (4)
+                                 With >=  1 occurances (4)
+
+   1:    5  ->  h
+   2:    3  ->  dh
+   3:    3  ->  v
+   4:    2  ->  s
+     -------
+        13
+
+
+
+DELETIONS                        Total                 (7)
+                                 With >=  1 occurances (7)
+
+   1:   17  ->  h
+   2:   10  ->  dh
+   3:    7  ->  v
+   4:    2  ->  f
+   5:    2  ->  s
+   6:    1  ->  th
+   7:    1  ->  z
+     -------
+        40
+
+
+
+SUBSTITUTIONS                    Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:   32  ->  z
+   2:   23  ->  dh
+   3:   21  ->  s
+   4:   19  ->  v
+   5:   14  ->  th
+   6:   10  ->  f
+   7:    8  ->  sh
+   8:    4  ->  h
+     -------
+       131
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (24)
+                                 With >=  1 occurances (24)
+
+   1:   30  ->  s
+   2:   17  ->  z
+   3:   12  ->  t
+   4:   10  ->  d
+   5:    8  ->  ch
+   6:    7  ->  sil
+   7:    6  ->  b
+   8:    6  ->  dx
+   9:    5  ->  dh
+  10:    5  ->  f
+  11:    4  ->  sh
+  12:    4  ->  v
+  13:    3  ->  m
+  14:    3  ->  p
+  15:    2  ->  l
+  16:    1  ->  ay
+  17:    1  ->  eh
+  18:    1  ->  h
+  19:    1  ->  ih
+  20:    1  ->  iy
+  21:    1  ->  jh
+  22:    1  ->  n
+  23:    1  ->  ow
+  24:    1  ->  th
+     -------
+       131
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

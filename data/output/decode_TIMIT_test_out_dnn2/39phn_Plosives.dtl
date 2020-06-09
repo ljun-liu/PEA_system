@@ -1,0 +1,145 @@
+WORD RECOGNITION PERFORMANCE of Plosives
+
+Percent Total Error       =   20.4%   ( 180)
+
+Percent Correct           =   82.7%   ( 729)
+
+Percent Substitution      =   11.4%   ( 100)
+Percent Deletions         =    5.9%   (  52)
+Percent Insertions        =    3.2%   (  28)
+Percent Word Accuracy     =   79.6%   
+
+
+Ref. words                =           ( 881)
+Hyp. words                =           ( 857)
+Aligned words             =           ( 909)
+
+CONFUSION PAIRS                  Total                 (41)
+                                 With >=  1 occurances (41)
+
+   1:   14  ->  d ==> t
+   2:    7  ->  p ==> b
+   3:    6  ->  d ==> dh
+   4:    5  ->  t ==> d
+   5:    4  ->  b ==> p
+   6:    4  ->  g ==> k
+   7:    4  ->  jh ==> ch
+   8:    4  ->  p ==> t
+   9:    3  ->  d ==> dx
+  10:    3  ->  g ==> d
+  11:    3  ->  k ==> g
+  12:    3  ->  k ==> t
+  13:    3  ->  p ==> f
+  14:    2  ->  b ==> m
+  15:    2  ->  b ==> dh
+  16:    2  ->  ch ==> sh
+  17:    2  ->  ch ==> jh
+  18:    2  ->  d ==> b
+  19:    2  ->  d ==> g
+  20:    2  ->  g ==> ah
+  21:    2  ->  jh ==> sh
+  22:    2  ->  t ==> ch
+  23:    1  ->  b ==> v
+  24:    1  ->  b ==> sil
+  25:    1  ->  b ==> w
+  26:    1  ->  ch ==> t
+  27:    1  ->  d ==> v
+  28:    1  ->  g ==> dx
+  29:    1  ->  g ==> b
+  30:    1  ->  k ==> aa
+  31:    1  ->  k ==> dh
+  32:    1  ->  k ==> h
+  33:    1  ->  p ==> h
+  34:    1  ->  p ==> k
+  35:    1  ->  p ==> ah
+  36:    1  ->  t ==> dh
+  37:    1  ->  t ==> th
+  38:    1  ->  t ==> p
+  39:    1  ->  t ==> ih
+  40:    1  ->  t ==> k
+  41:    1  ->  t ==> s
+     -------
+       100
+
+
+
+INSERTIONS                       Total                 (7)
+                                 With >=  1 occurances (7)
+
+   1:    8  ->  d
+   2:    7  ->  k
+   3:    5  ->  t
+   4:    4  ->  p
+   5:    2  ->  jh
+   6:    1  ->  b
+   7:    1  ->  ch
+     -------
+        28
+
+
+
+DELETIONS                        Total                 (7)
+                                 With >=  1 occurances (7)
+
+   1:   14  ->  t
+   2:   10  ->  d
+   3:   10  ->  k
+   4:    8  ->  b
+   5:    6  ->  p
+   6:    2  ->  g
+   7:    2  ->  jh
+     -------
+        52
+
+
+
+SUBSTITUTIONS                    Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:   28  ->  d
+   2:   17  ->  p
+   3:   13  ->  t
+   4:   11  ->  b
+   5:   11  ->  g
+   6:    9  ->  k
+   7:    6  ->  jh
+   8:    5  ->  ch
+     -------
+       100
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (22)
+                                 With >=  1 occurances (22)
+
+   1:   22  ->  t
+   2:   10  ->  b
+   3:   10  ->  dh
+   4:    8  ->  d
+   5:    6  ->  ch
+   6:    6  ->  k
+   7:    5  ->  g
+   8:    5  ->  p
+   9:    4  ->  dx
+  10:    4  ->  sh
+  11:    3  ->  ah
+  12:    3  ->  f
+  13:    2  ->  h
+  14:    2  ->  jh
+  15:    2  ->  m
+  16:    2  ->  v
+  17:    1  ->  aa
+  18:    1  ->  ih
+  19:    1  ->  s
+  20:    1  ->  sil
+  21:    1  ->  th
+  22:    1  ->  w
+     -------
+       100
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

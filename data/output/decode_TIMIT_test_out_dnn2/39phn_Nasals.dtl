@@ -1,0 +1,118 @@
+WORD RECOGNITION PERFORMANCE of Nasals
+
+Percent Total Error       =   20.3%   ( 130)
+
+Percent Correct           =   81.7%   ( 524)
+
+Percent Substitution      =   12.9%   (  83)
+Percent Deletions         =    5.3%   (  34)
+Percent Insertions        =    2.0%   (  13)
+Percent Word Accuracy     =   79.7%   
+
+
+Ref. words                =           ( 641)
+Hyp. words                =           ( 620)
+Aligned words             =           ( 654)
+
+CONFUSION PAIRS                  Total                 (30)
+                                 With >=  1 occurances (30)
+
+   1:   14  ->  n ==> m
+   2:   13  ->  m ==> n
+   3:    9  ->  ng ==> n
+   4:    7  ->  n ==> dx
+   5:    5  ->  n ==> ng
+   6:    3  ->  n ==> sil
+   7:    3  ->  ng ==> m
+   8:    2  ->  m ==> b
+   9:    2  ->  m ==> w
+  10:    2  ->  n ==> ih
+  11:    2  ->  n ==> iy
+  12:    2  ->  n ==> ah
+  13:    2  ->  n ==> r
+  14:    1  ->  m ==> v
+  15:    1  ->  m ==> d
+  16:    1  ->  m ==> eh
+  17:    1  ->  m ==> ae
+  18:    1  ->  m ==> ng
+  19:    1  ->  m ==> sil
+  20:    1  ->  n ==> s
+  21:    1  ->  n ==> ey
+  22:    1  ->  n ==> b
+  23:    1  ->  n ==> ae
+  24:    1  ->  n ==> d
+  25:    1  ->  n ==> dh
+  26:    1  ->  n ==> t
+  27:    1  ->  n ==> er
+  28:    1  ->  ng ==> iy
+  29:    1  ->  ng ==> ih
+  30:    1  ->  ng ==> sil
+     -------
+        83
+
+
+
+INSERTIONS                       Total                 (2)
+                                 With >=  1 occurances (2)
+
+   1:    7  ->  n
+   2:    6  ->  m
+     -------
+        13
+
+
+
+DELETIONS                        Total                 (3)
+                                 With >=  1 occurances (3)
+
+   1:   21  ->  n
+   2:   12  ->  m
+   3:    1  ->  ng
+     -------
+        34
+
+
+
+SUBSTITUTIONS                    Total                 (3)
+                                 With >=  1 occurances (3)
+
+   1:   45  ->  n
+   2:   23  ->  m
+   3:   15  ->  ng
+     -------
+        83
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (20)
+                                 With >=  1 occurances (20)
+
+   1:   22  ->  n
+   2:   17  ->  m
+   3:    7  ->  dx
+   4:    6  ->  ng
+   5:    5  ->  sil
+   6:    3  ->  b
+   7:    3  ->  ih
+   8:    3  ->  iy
+   9:    2  ->  ae
+  10:    2  ->  ah
+  11:    2  ->  d
+  12:    2  ->  r
+  13:    2  ->  w
+  14:    1  ->  dh
+  15:    1  ->  eh
+  16:    1  ->  er
+  17:    1  ->  ey
+  18:    1  ->  s
+  19:    1  ->  t
+  20:    1  ->  v
+     -------
+        83
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

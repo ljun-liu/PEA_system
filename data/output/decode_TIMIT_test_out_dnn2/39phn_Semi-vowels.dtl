@@ -1,0 +1,135 @@
+WORD RECOGNITION PERFORMANCE of Semi-vowels
+
+Percent Total Error       =   19.2%   ( 190)
+
+Percent Correct           =   83.8%   ( 829)
+
+Percent Substitution      =    9.5%   (  94)
+Percent Deletions         =    6.7%   (  66)
+Percent Insertions        =    3.0%   (  30)
+Percent Word Accuracy     =   80.8%   
+
+
+Ref. words                =           ( 989)
+Hyp. words                =           ( 953)
+Aligned words             =           (1019)
+
+CONFUSION PAIRS                  Total                 (36)
+                                 With >=  1 occurances (36)
+
+   1:   19  ->  er ==> r
+   2:   10  ->  r ==> er
+   3:    9  ->  er ==> ih
+   4:    7  ->  l ==> ow
+   5:    5  ->  l ==> w
+   6:    5  ->  w ==> l
+   7:    3  ->  l ==> p
+   8:    3  ->  y ==> iy
+   9:    2  ->  er ==> ah
+  10:    2  ->  er ==> aa
+  11:    2  ->  l ==> aa
+  12:    2  ->  l ==> t
+  13:    2  ->  w ==> aa
+  14:    1  ->  er ==> b
+  15:    1  ->  er ==> n
+  16:    1  ->  er ==> uw
+  17:    1  ->  er ==> eh
+  18:    1  ->  l ==> h
+  19:    1  ->  l ==> b
+  20:    1  ->  l ==> eh
+  21:    1  ->  l ==> ch
+  22:    1  ->  l ==> aw
+  23:    1  ->  l ==> ah
+  24:    1  ->  l ==> v
+  25:    1  ->  l ==> ay
+  26:    1  ->  r ==> m
+  27:    1  ->  r ==> ow
+  28:    1  ->  r ==> sil
+  29:    1  ->  r ==> aw
+  30:    1  ->  r ==> y
+  31:    1  ->  r ==> ah
+  32:    1  ->  r ==> p
+  33:    1  ->  w ==> v
+  34:    1  ->  w ==> r
+  35:    1  ->  w ==> uw
+  36:    1  ->  y ==> sh
+     -------
+        94
+
+
+
+INSERTIONS                       Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:   13  ->  r
+   2:    7  ->  l
+   3:    6  ->  w
+   4:    3  ->  y
+   5:    1  ->  er
+     -------
+        30
+
+
+
+DELETIONS                        Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:   31  ->  r
+   2:   13  ->  y
+   3:   12  ->  l
+   4:    8  ->  w
+   5:    2  ->  er
+     -------
+        66
+
+
+
+SUBSTITUTIONS                    Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:   36  ->  er
+   2:   27  ->  l
+   3:   17  ->  r
+   4:   10  ->  w
+   5:    4  ->  y
+     -------
+        94
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (24)
+                                 With >=  1 occurances (24)
+
+   1:   20  ->  r
+   2:   10  ->  er
+   3:    9  ->  ih
+   4:    8  ->  ow
+   5:    6  ->  aa
+   6:    5  ->  l
+   7:    5  ->  w
+   8:    4  ->  ah
+   9:    4  ->  p
+  10:    3  ->  iy
+  11:    2  ->  aw
+  12:    2  ->  b
+  13:    2  ->  eh
+  14:    2  ->  t
+  15:    2  ->  uw
+  16:    2  ->  v
+  17:    1  ->  ay
+  18:    1  ->  ch
+  19:    1  ->  h
+  20:    1  ->  m
+  21:    1  ->  n
+  22:    1  ->  sh
+  23:    1  ->  sil
+  24:    1  ->  y
+     -------
+        94
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

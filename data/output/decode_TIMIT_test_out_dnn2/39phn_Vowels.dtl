@@ -1,0 +1,184 @@
+WORD RECOGNITION PERFORMANCE of Vowels
+
+Percent Total Error       =   27.8%   ( 492)
+
+Percent Correct           =   74.4%   (1316)
+
+Percent Substitution      =   21.0%   ( 372)
+Percent Deletions         =    4.6%   (  81)
+Percent Insertions        =    2.2%   (  39)
+Percent Word Accuracy     =   72.2%   
+
+
+Ref. words                =           (1769)
+Hyp. words                =           (1727)
+Aligned words             =           (1808)
+
+CONFUSION PAIRS                  Total                 (74)
+                                 With >=  1 occurances (74)
+
+   1:   42  ->  ah ==> ih
+   2:   32  ->  ih ==> ah
+   3:   27  ->  ih ==> iy
+   4:   25  ->  eh ==> ih
+   5:   23  ->  ae ==> eh
+   6:   16  ->  ih ==> eh
+   7:   13  ->  eh ==> ah
+   8:   12  ->  ah ==> aa
+   9:   11  ->  ah ==> eh
+  10:   11  ->  ih ==> er
+  11:   10  ->  iy ==> ey
+  12:    9  ->  ih ==> ey
+  13:    8  ->  aa ==> ah
+  14:    8  ->  ah ==> ow
+  15:    8  ->  iy ==> ih
+  16:    7  ->  aa ==> ay
+  17:    7  ->  eh ==> ae
+  18:    6  ->  ah ==> er
+  19:    5  ->  uh ==> ih
+  20:    5  ->  uw ==> iy
+  21:    5  ->  uw ==> ih
+  22:    4  ->  ih ==> uh
+  23:    4  ->  uh ==> ah
+  24:    3  ->  aa ==> aw
+  25:    3  ->  ih ==> uw
+  26:    3  ->  ih ==> n
+  27:    2  ->  aa ==> eh
+  28:    2  ->  aa ==> er
+  29:    2  ->  aa ==> ae
+  30:    2  ->  ae ==> ey
+  31:    2  ->  ae ==> ay
+  32:    2  ->  ah ==> ay
+  33:    2  ->  ah ==> uh
+  34:    2  ->  ah ==> l
+  35:    2  ->  eh ==> ay
+  36:    2  ->  ih ==> y
+  37:    2  ->  ih ==> ay
+  38:    2  ->  ih ==> ow
+  39:    2  ->  ih ==> ae
+  40:    2  ->  ih ==> p
+  41:    2  ->  iy ==> uw
+  42:    2  ->  uh ==> eh
+  43:    2  ->  uw ==> er
+  44:    1  ->  aa ==> w
+  45:    1  ->  aa ==> ow
+  46:    1  ->  ae ==> aa
+  47:    1  ->  ae ==> ih
+  48:    1  ->  ae ==> ah
+  49:    1  ->  ah ==> sil
+  50:    1  ->  ah ==> dx
+  51:    1  ->  ah ==> aw
+  52:    1  ->  ah ==> ae
+  53:    1  ->  ah ==> r
+  54:    1  ->  ah ==> ch
+  55:    1  ->  eh ==> th
+  56:    1  ->  eh ==> l
+  57:    1  ->  eh ==> ey
+  58:    1  ->  ih ==> d
+  59:    1  ->  ih ==> sil
+  60:    1  ->  ih ==> ng
+  61:    1  ->  ih ==> v
+  62:    1  ->  ih ==> r
+  63:    1  ->  ih ==> l
+  64:    1  ->  iy ==> t
+  65:    1  ->  iy ==> er
+  66:    1  ->  iy ==> y
+  67:    1  ->  uh ==> er
+  68:    1  ->  uh ==> l
+  69:    1  ->  uh ==> ow
+  70:    1  ->  uh ==> r
+  71:    1  ->  uh ==> uw
+  72:    1  ->  uw ==> r
+  73:    1  ->  uw ==> ow
+  74:    1  ->  uw ==> uh
+     -------
+       372
+
+
+
+INSERTIONS                       Total                 (7)
+                                 With >=  1 occurances (7)
+
+   1:   11  ->  ah
+   2:    9  ->  aa
+   3:    9  ->  ih
+   4:    3  ->  ae
+   5:    3  ->  eh
+   6:    3  ->  iy
+   7:    1  ->  uw
+     -------
+        39
+
+
+
+DELETIONS                        Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:   32  ->  ih
+   2:   20  ->  ah
+   3:   15  ->  eh
+   4:    7  ->  aa
+   5:    3  ->  ae
+   6:    2  ->  iy
+   7:    1  ->  uh
+   8:    1  ->  uw
+     -------
+        81
+
+
+
+SUBSTITUTIONS                    Total                 (8)
+                                 With >=  1 occurances (8)
+
+   1:  121  ->  ih
+   2:   91  ->  ah
+   3:   50  ->  eh
+   4:   30  ->  ae
+   5:   26  ->  aa
+   6:   23  ->  iy
+   7:   16  ->  uh
+   8:   15  ->  uw
+     -------
+       372
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (27)
+                                 With >=  1 occurances (27)
+
+   1:   86  ->  ih
+   2:   58  ->  ah
+   3:   54  ->  eh
+   4:   32  ->  iy
+   5:   23  ->  er
+   6:   22  ->  ey
+   7:   15  ->  ay
+   8:   13  ->  aa
+   9:   13  ->  ow
+  10:   12  ->  ae
+  11:    7  ->  uh
+  12:    6  ->  uw
+  13:    5  ->  l
+  14:    4  ->  aw
+  15:    4  ->  r
+  16:    3  ->  n
+  17:    3  ->  y
+  18:    2  ->  p
+  19:    2  ->  sil
+  20:    1  ->  ch
+  21:    1  ->  d
+  22:    1  ->  dx
+  23:    1  ->  ng
+  24:    1  ->  t
+  25:    1  ->  th
+  26:    1  ->  v
+  27:    1  ->  w
+     -------
+       372
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

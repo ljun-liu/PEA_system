@@ -1,0 +1,117 @@
+WORD RECOGNITION PERFORMANCE of Diphthongs
+
+Percent Total Error       =   25.4%   (  86)
+
+Percent Correct           =   78.1%   ( 264)
+
+Percent Substitution      =   18.6%   (  63)
+Percent Deletions         =    3.3%   (  11)
+Percent Insertions        =    3.6%   (  12)
+Percent Word Accuracy     =   74.6%   
+
+
+Ref. words                =           ( 338)
+Hyp. words                =           ( 339)
+Aligned words             =           ( 350)
+
+CONFUSION PAIRS                  Total                 (28)
+                                 With >=  1 occurances (28)
+
+   1:    8  ->  ey ==> ih
+   2:    6  ->  ow ==> ah
+   3:    6  ->  ow ==> l
+   4:    5  ->  ow ==> aa
+   5:    4  ->  ay ==> ey
+   6:    3  ->  ay ==> ah
+   7:    3  ->  ay ==> aa
+   8:    3  ->  ey ==> iy
+   9:    2  ->  aw ==> l
+  10:    2  ->  ey ==> eh
+  11:    2  ->  ow ==> eh
+  12:    2  ->  oy ==> r
+  13:    2  ->  oy ==> ih
+  14:    1  ->  aw ==> ah
+  15:    1  ->  aw ==> eh
+  16:    1  ->  aw ==> sil
+  17:    1  ->  ay ==> r
+  18:    1  ->  ey ==> ay
+  19:    1  ->  ey ==> ae
+  20:    1  ->  ow ==> ih
+  21:    1  ->  ow ==> m
+  22:    1  ->  ow ==> p
+  23:    1  ->  ow ==> uw
+  24:    1  ->  ow ==> z
+  25:    1  ->  ow ==> er
+  26:    1  ->  ow ==> aw
+  27:    1  ->  oy ==> ey
+  28:    1  ->  oy ==> eh
+     -------
+        63
+
+
+
+INSERTIONS                       Total                 (4)
+                                 With >=  1 occurances (4)
+
+   1:    4  ->  ay
+   2:    3  ->  ey
+   3:    3  ->  ow
+   4:    2  ->  aw
+     -------
+        12
+
+
+
+DELETIONS                        Total                 (3)
+                                 With >=  1 occurances (3)
+
+   1:    6  ->  ow
+   2:    3  ->  ay
+   3:    2  ->  ey
+     -------
+        11
+
+
+
+SUBSTITUTIONS                    Total                 (5)
+                                 With >=  1 occurances (5)
+
+   1:   26  ->  ow
+   2:   15  ->  ey
+   3:   11  ->  ay
+   4:    6  ->  oy
+   5:    5  ->  aw
+     -------
+        63
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (17)
+                                 With >=  1 occurances (17)
+
+   1:   11  ->  ih
+   2:   10  ->  ah
+   3:    8  ->  aa
+   4:    8  ->  l
+   5:    6  ->  eh
+   6:    5  ->  ey
+   7:    3  ->  iy
+   8:    3  ->  r
+   9:    1  ->  ae
+  10:    1  ->  aw
+  11:    1  ->  ay
+  12:    1  ->  er
+  13:    1  ->  m
+  14:    1  ->  p
+  15:    1  ->  sil
+  16:    1  ->  uw
+  17:    1  ->  z
+     -------
+        63
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.

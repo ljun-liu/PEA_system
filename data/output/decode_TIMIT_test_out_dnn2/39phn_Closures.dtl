@@ -1,0 +1,84 @@
+WORD RECOGNITION PERFORMANCE of Closures
+
+Percent Total Error       =    4.1%   (  63)
+
+Percent Correct           =   98.6%   (1530)
+
+Percent Substitution      =    1.1%   (  17)
+Percent Deletions         =    0.3%   (   4)
+Percent Insertions        =    2.7%   (  42)
+Percent Word Accuracy     =   95.9%   
+
+
+Ref. words                =           (1551)
+Hyp. words                =           (1589)
+Aligned words             =           (1593)
+
+CONFUSION PAIRS                  Total                 (10)
+                                 With >=  1 occurances (10)
+
+   1:    5  ->  dx ==> n
+   2:    3  ->  dx ==> d
+   3:    2  ->  sil ==> h
+   4:    1  ->  dx ==> w
+   5:    1  ->  dx ==> iy
+   6:    1  ->  sil ==> y
+   7:    1  ->  sil ==> dx
+   8:    1  ->  sil ==> aa
+   9:    1  ->  sil ==> v
+  10:    1  ->  sil ==> iy
+     -------
+        17
+
+
+
+INSERTIONS                       Total                 (2)
+                                 With >=  1 occurances (2)
+
+   1:   41  ->  sil
+   2:    1  ->  dx
+     -------
+        42
+
+
+
+DELETIONS                        Total                 (1)
+                                 With >=  1 occurances (1)
+
+   1:    4  ->  dx
+     -------
+         4
+
+
+
+SUBSTITUTIONS                    Total                 (2)
+                                 With >=  1 occurances (2)
+
+   1:   10  ->  dx
+   2:    7  ->  sil
+     -------
+        17
+
+
+* NOTE: The 'Substitution' words are those reference words
+        for which the recognizer supplied an incorrect word.
+
+
+FALSELY RECOGNIZED               Total                 (9)
+                                 With >=  1 occurances (9)
+
+   1:    5  ->  n
+   2:    3  ->  d
+   3:    2  ->  h
+   4:    2  ->  iy
+   5:    1  ->  aa
+   6:    1  ->  dx
+   7:    1  ->  v
+   8:    1  ->  w
+   9:    1  ->  y
+     -------
+        17
+
+
+* NOTE: The 'Falsely Recognized' words are those hypothesis words
+        which the recognizer incorrectly substituted for a reference word.
