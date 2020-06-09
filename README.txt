@@ -1,5 +1,5 @@
 update 09/06/2020
-(1). replace the old 'run.sh' by the modified one;
+(1). replace the old 'run.sh' with the modified one;
 (2). change the structure of PEA system;
 (3). add Confidence colunmn in classes_error table;
 (4). align the numbers in the table at the centre of cells;
