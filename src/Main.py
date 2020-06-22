@@ -119,8 +119,7 @@ if __name__ == '__main__':
 
     ''' PER (with confidence) calculation '''
     # start_per_time = time.clock()
-    overall_info, phoneme_class_info, conf_dic = PER(scoring_directory, class_phoneme_dic)
-#    model_per_dic[model_name] = (overall_info, phoneme_class_info)
+    phoneme_class_info, conf_dic = PER(scoring_directory, class_phoneme_dic)
     # print('PER calculation duration:', time.clock() - start_per_time)
 
     ''' analysis (figures) '''

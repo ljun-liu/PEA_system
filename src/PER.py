@@ -173,11 +173,6 @@ def PER(scoring_directory, class_phoneme_dic):
 
     Returns
     -------
-    overall_info : tuple
-        a tuple contains information about overall PER, 
-                                           overall deletion list, 
-                                           overall insertion list, 
-                                           overall substitution list
     phoneme_class_info : tuple        
         a tuple contains information about PER, deletion list, insertion list and substitution list per phonemic class
     conf_dic : dic
@@ -188,12 +183,6 @@ def PER(scoring_directory, class_phoneme_dic):
     
     file_path = scoring_directory + 'preprocessed_data/39phn_preprocessing'
     prf_ref_list, prf_hyp_list, prf_conf_list = propre_reader(file_path)
-
-    ''' PER calculation (overall) '''
-    # time1 = time.clock()
-    per_overall, _, deletion_list, insertion_list, substitution_list = PER_cal(prf_ref_list, prf_hyp_list)
-    # print('1 PER calculation (overall):', time.clock() - time1)
-    overall_info = (per_overall, deletion_list, insertion_list, substitution_list)
 
     ''' PER calculation (per phonemic class) '''
     # time2 = time.clock()
@@ -206,7 +195,7 @@ def PER(scoring_directory, class_phoneme_dic):
     # print('2 PER calculation (per phonemic class):', time.clock() - time2)
     phoneme_class_info = (per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub)
 
-    return overall_info, phoneme_class_info, conf_dic
+    return phoneme_class_info, conf_dic
 
 
 # if __name__ == '__main__':

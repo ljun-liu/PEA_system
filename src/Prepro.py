@@ -91,7 +91,7 @@ def prfnew_reader(f_path):
                 eval(header+'_list').append(line[1])
                 flag = True
             else:
-                content = formatted_list(line[1].strip(), header)
+                content = formatted_list(line[1], header)
                 eval(header+'_list').extend(content)
                 if flag:
                     flag = False
@@ -99,7 +99,7 @@ def prfnew_reader(f_path):
                     labels_list.extend([labels_list[-1]] * (len(content)-1))
                     file_list.extend([file_list[-1]] * (len(content)-1))
                     channel_list.extend([channel_list[-1]] * (len(content)-1))
-
+                
             def formatted_list(content, header):
                 '''
                 1. in 'hyp', there are some phonemes 'sil' in 'ref' that are not recognized by the ASR system;
