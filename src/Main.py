@@ -16,8 +16,9 @@ import argparse
 
 from src.Prepro import prepro
 from src.PER import PER
-from src.Analysis import class_phoneme_analysis, systems_analysis, class_error_table_analysis, class_error_graph_analysis
+from src.Analysis import class_phoneme_analysis, class_error_table_analysis, class_error_graph_analysis
 from src.Analysis import class_token_no_graph_analysis, class_error_detailed_graph_analysis, class_confidence_graph_analysis
+from src.Analysis import confusion_matrix_analysis, five_broad_confusion_matrix_analysis
 
 
 parser = argparse.ArgumentParser(description='PEA system for phonemic analysis of ASR systems')
@@ -95,17 +96,8 @@ if __name__ == '__main__':
                                      'th', 'v', 'dh', 'h', 'm', 'n', 'ng', 'l', 'r', 'er', 'w', 'y',
                                      'iy', 'ih', 'eh', 'ae', 'aa', 'ah', 'uh', 'uw', 'ey', 'aw', 'ay',
                                      'oy', 'ow', 'sil', 'dx']}
-                         
-    model_per_dic = {}
-
-#    # correctness test (overall test):
-#    test_overall_class_phoneme_dic = {'Overall_test': ['b', 'd', 'g', 'p', 't', 'k', 'jh', 'ch', 's', 'sh', 'z', 'f',
-#                                                       'th', 'v', 'dh', 'h', 'm', 'n', 'ng', 'l', 'r', 'er', 'w', 'y',
-#                                                       'iy', 'ih', 'eh', 'ae', 'aa', 'ah', 'uh', 'uw', 'ey', 'aw', 'ay',
-#                                                       'oy', 'ow', 'sil', 'dx']}
-#    if iftest:
-#        class_phoneme_dic = test_overall_class_phoneme_dic
-        
+            
+    
     print('-' *50)
     input_print(scoring_directory, results_directory)
     
@@ -134,6 +126,13 @@ if __name__ == '__main__':
     class_error_detailed_graph_analysis(results_directory, class_error_dic)
     class_confidence_graph_analysis(results_directory, conf_dic)
 #    print('analysis (figures) duration:', time.clock() - start_analysis_time)
+    f_name, ph_classes = 'voiced_unvoiced', list(class_phoneme_dic.keys())[7:9]
+    confusion_matrix_analysis(results_directory, f_name, phoneme_class_info, ph_classes, class_phoneme_dic)
+    f_name, ph_classes = 'vowels_consonants', [list(class_phoneme_dic.keys())[4], list(class_phoneme_dic.keys())[9]]
+    confusion_matrix_analysis(results_directory, f_name, phoneme_class_info, ph_classes, class_phoneme_dic)
+    f_name, ph_classes = 'seven_broad', list(class_phoneme_dic.keys())[:7]
+    confusion_matrix_analysis(results_directory, f_name, phoneme_class_info, ph_classes, class_phoneme_dic)
+    five_broad_confusion_matrix_analysis(results_directory, phoneme_class_info)
 
     end_time = time.process_time()
     duration = end_time - start_time

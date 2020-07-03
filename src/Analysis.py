@@ -13,6 +13,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import time
 import copy
+from sklearn.metrics import confusion_matrix
 
 def mk_dir(f_dir):
     '''Create the directory if it does not exist
@@ -60,7 +61,7 @@ def conclusion_analysis(phoneme_class_info, phonemic_class):
     count : tuple
         a tuple contains the number of phonemes in ref, the number of phonemes in hyp and the number of phonemes after alignment 
     '''
-    per_class_phoneme_dic, _, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = phoneme_class_info
+    per_class_phoneme_dic, _, _, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = phoneme_class_info
     class_phoneme, deletion, insertion, substitution = per_class_phoneme_dic[phonemic_class], \
                                                             phoneme_class_Del[phonemic_class], \
                                                             phoneme_class_Ins[phonemic_class], \
@@ -250,7 +251,7 @@ def dtl_create(f_path, phoneme_class_info):
     class_error_dic : dic
         a dictonary of phonemic classes with errors information (PER/Ins/Del/Sub)
     '''
-    _, phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = phoneme_class_info
+    _, phoneme_class_PER, _, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = phoneme_class_info
     phonemic_classes = phoneme_class_PER.keys()
     
     if not f_path.endswith('/'):
@@ -638,49 +639,138 @@ def class_confidence_graph_analysis(results_directory, conf_dic, width=0.6, ifsh
     plt.savefig(figure_dir+'classes_avg_confidence.pdf')    
     
     plt.close()
-        
     
-def systems_analysis(sys_filename, class_phoneme_dic, model_per_dic): 
-    '''Print 
+def confusion_matrix_statistics(phoneme_class_Cor, phoneme_class_Sub, ph_classes, class_phoneme_dic):
+    '''Print detailed analysis for phonemic classes
     
     Parameters
     ----------
-    sys_filename : str     
-        the name of file for ASR systems' comparison
-    class_phoneme_dic : dic     
-        a dictionary of phonemic classes with corersponding phonemes according to judgement from Reynolds and Antonious
-    model_per_dic : dic     
-         a dictionary of ASR models with corersponding overall PER and PERs of phonemic classes
+    phoneme_class_Cor : dic
+        a dictionary of phonemic classes with a list of correctly recognized phonemes
+    phoneme_class_Sub : dic
+        a dictionary of phonemic classes with a list of corresponding confusion phoneme pairs
+    ph_classes : list     
+        a list of phonemic classes in confusion matrix
+    class_phoneme_dic : dic
+        a dictionary of phonemic classes with corersponding phonemes        
+        
+    Returns
+    -------
+    cm : dic
+        confusion matrix
+    '''
+    ph_true, ph_pred = [], []
+    for ph_class in ph_classes:
+        for _ in phoneme_class_Cor[ph_class]:
+            ph_true.append(ph_class)
+            ph_pred.append(ph_class)
+        for _, hyp in phoneme_class_Sub[ph_class]:
+            for hyp_class in ph_classes:
+                if hyp in class_phoneme_dic[hyp_class]:
+                    ph_true.append(ph_class)
+                    ph_pred.append(hyp_class)
+                    continue
+            
+    cm = confusion_matrix(ph_true, ph_pred, labels=ph_classes)
     
+    return cm
+
+def confusion_matrix_analysis(results_directory, f_name, phoneme_class_info, ph_classes, class_phoneme_dic):   
+    '''Draw confusion matric table
+    
+    Parameters
+    ----------
+    results_directory : str
+        the directory of analysis results
+    f_name : str
+        the file name
+    phoneme_class_info : tuple     
+        a tuple contains information about PER, deletion list, insertion list and substitution list per phonemic class
+    ph_classes : list     
+        a list of phonemic classes in confusion matrix
+    class_phoneme_dic : dic
+        a dictionary of phonemic classes with corersponding phonemes    
+        
     Returns
     -------
     None
     '''
+        
+    print('draw ' + f_name + ' confusion matrix...')
     
-    print('\ncomapre ASR systems...')
+    _, _, phoneme_class_Cor, _, _, phoneme_class_Sub = phoneme_class_info
+    cm = confusion_matrix_statistics(phoneme_class_Cor, phoneme_class_Sub, ph_classes, class_phoneme_dic)
     
-#    file_dir = 'data/output/'
-#    mk_dir(file_dir)
-#    file_path = file_dir + sys_filename
-#
-#    with open(file_path, 'w', encoding='utf-8') as f:
-#        phonemic_classes = class_phoneme_dic.keys()
-#        ''' head of table'''
-#        f.writelines('-' * (12+1) * (len(phonemic_classes) + 2))
-#        f.writelines('\n|{0:^12}|{1:^12}'.format('Systems', 'Overall'))
-#        for phonemic_class in phonemic_classes:
-#            f.writelines('|{:^12}'.format(phonemic_class))
-#        f.writelines('|\n' + '-' * (12+1) * (len(phonemic_classes) + 2))
-#
-#        ''' body of table'''
-#        for model_name, info in model_per_dic.items():
-#            m_name = model_name.split('_')[-1]
-#            overall_info, phoneme_class_info = info
-#            per_overall, _, _, _ = overall_info
-#            _, phoneme_class_PER, _, _, _ = phoneme_class_info
-#            f.writelines('\n|{0:^12}|{1:^12.1f}'.format(m_name, 100 * per_overall))
-#            for phonemic_class in phoneme_class_PER.keys():
-#                f.writelines('|{:^12.1f}'.format(100 * phoneme_class_PER[phonemic_class]))
-#            f.writelines('|\n' + '-' * (12+1) * (len(phonemic_classes) + 2))
-#
-#    f.close()
+    with open(results_directory+f_name+'_confusion_matrix.txt', 'w', encoding='utf-8') as f:  
+#       confusion matrix
+        f.writelines('Confusion Matrix:\n' + '-' * (16+1) * (len(ph_classes)+1) + '\n|{0:16}'.format(''))        
+        for i in range(len(ph_classes)):
+            f.writelines('|{0:^16}'.format(ph_classes[i]))
+        f.writelines('|\n' + '-' * (16+1) * (len(ph_classes)+1))
+
+        for i in range(len(ph_classes)):
+            f.writelines('\n|{0:^16}'.format(ph_classes[i]))
+            for j in range(len(ph_classes)):
+                f.writelines('|{0:^16}'.format(cm[i,j]))
+            f.writelines('|\n' + '-' * (16+1) * (len(ph_classes)+1))
+            
+#        description
+        f.writelines('\n(ROWS: Actual Classes; COLUMNS: Predicted Classes)')
+            
+#       correct phonemes per class
+        f.writelines('\n\n# Correct Phonemes:\n------------------'.format(''))   
+        for ph_class in ph_classes:
+            f.writelines('\n{0:14}{1:4}'.format(ph_class+':', len(phoneme_class_Cor[ph_class])))
+    f.close()
+    
+def five_broad_confusion_matrix_analysis(results_directory, phoneme_class_info):    
+    '''Draw five broad confusion matric table
+    
+    Parameters
+    ----------
+    results_directory : str
+        the directory of analysis results
+    phoneme_class_info : tuple     
+        a tuple contains information about PER, deletion list, insertion list and substitution list per phonemic class
+        
+    Returns
+    -------
+    None
+    '''
+        
+    print('draw five_broad confusion matrix...')
+                 
+    
+    five_broad_class_phoneme_dic = {'Plosives': ['b', 'd', 'g', 'p', 't', 'k', 'jh', 'ch'],
+                                     'Fricatives': ['s', 'sh', 'z', 'f', 'th', 'v', 'dh', 'h'],
+                                     'Nasals': ['m', 'n', 'ng'],
+                                     'Vowels': ['iy', 'ih', 'eh', 'ae', 'aa', 'ah', 'uh', 'uw', 'l', 'r', 'er', 'w', 'y', 'ey', 'aw', 'ay', 'oy', 'ow'],
+                                     'Closures': ['sil', 'dx']}
+    ph_classes = list(five_broad_class_phoneme_dic.keys())
+    _, _, phoneme_class_Cor, _, _, phoneme_class_Sub = phoneme_class_info
+    phoneme_class_Cor['Vowels'] = phoneme_class_Cor['Vowels'] + phoneme_class_Cor['Semi-vowels'] + phoneme_class_Cor['Diphthongs']
+    phoneme_class_Sub['Vowels'] = phoneme_class_Sub['Vowels'] + phoneme_class_Sub['Semi-vowels'] + phoneme_class_Sub['Diphthongs']
+    cm = confusion_matrix_statistics(phoneme_class_Cor, phoneme_class_Sub, ph_classes, five_broad_class_phoneme_dic)
+    
+    with open(results_directory+'five_broad_confusion_matrix.txt', 'w', encoding='utf-8') as f:  
+#       confusion matrix
+        f.writelines('Confusion Matrix:\n' + '-' * (16+1) * (len(ph_classes)+1) + '\n|{0:16}'.format(''))        
+        for i in range(len(ph_classes)):
+            f.writelines('|{0:^16}'.format(ph_classes[i]))
+        f.writelines('|\n' + '-' * (16+1) * (len(ph_classes)+1))
+
+        for i in range(len(ph_classes)):
+            f.writelines('\n|{0:^16}'.format(ph_classes[i]))
+            for j in range(len(ph_classes)):
+                f.writelines('|{0:^16}'.format(cm[i,j]))
+            f.writelines('|\n' + '-' * (16+1) * (len(ph_classes)+1))
+            
+#        description
+        f.writelines('\n(ROWS: Actual Classes; COLUMNS: Predicted Classes)')
+            
+#       correct phonemes per class
+        f.writelines('\n\n# Correct Phonemes:\n------------------'.format(''))   
+        for ph_class in ph_classes:
+            f.writelines('\n{0:14}{1:4}'.format(ph_class+':', len(phoneme_class_Cor[ph_class])))
+    f.close()
+    

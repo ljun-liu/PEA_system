@@ -102,7 +102,7 @@ def PER_cal(prf_ref_list, prf_hyp_list):
             else:
                 substitution.append((per_ref, per_hyp))
         else:
-            correct.append(per_ref)
+            correct.append((per_ref, per_hyp))
     
     per = (len(substitution) + len(deletion) + len(insertion)) / (len(substitution) + len(deletion) + len(correct))
     return per, correct, deletion, insertion, substitution
@@ -125,6 +125,8 @@ def PER_per_class(prf_ref_list, prf_hyp_list, class_phoneme_dic):
         a dictionary of phonemic classes with corresponding reference and hypothesized phonemes
     phoneme_class_PER : dic
         a dictionary of phonemic classes with corresponding PER
+    phoneme_class_Cor : dic
+        a dictionary of phonemic classes with a list of correctly recognized phonemes
     phoneme_class_Del : dic
         a dictionary of phonemic classes with a list of corresponding deleted phonemes
     phoneme_class_Ins : dic
@@ -149,16 +151,17 @@ def PER_per_class(prf_ref_list, prf_hyp_list, class_phoneme_dic):
                     per_class_phoneme_dic[phonemic_class][0].append(per_ref)
                     per_class_phoneme_dic[phonemic_class][1].append(prf_hyp_list[index])
             
-    phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = {}, {}, {}, {}
+    phoneme_class_PER, phoneme_class_Cor, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = {}, {}, {}, {}, {}
     for phonemic_class in per_class_phoneme_dic.keys():
         per_class_ref_list, per_class_hyp_list = per_class_phoneme_dic[phonemic_class]
         per, correct, deletion, insertion, substitution = PER_cal(per_class_ref_list, per_class_hyp_list)
         phoneme_class_PER[phonemic_class] = per
+        phoneme_class_Cor[phonemic_class] = correct
         phoneme_class_Del[phonemic_class] = deletion
         phoneme_class_Ins[phonemic_class] = insertion
         phoneme_class_Sub[phonemic_class] = substitution
 
-    return per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub
+    return per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Cor, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub
 
 def PER(scoring_directory, class_phoneme_dic):
     '''Main function to compute PER and group deleted phonemes, inserted phonemes, confusion phoneme 
@@ -186,14 +189,14 @@ def PER(scoring_directory, class_phoneme_dic):
 
     ''' PER calculation (per phonemic class) '''
     # time2 = time.clock()
-    per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = PER_per_class(prf_ref_list,
+    per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Cor, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub = PER_per_class(prf_ref_list,
                                                                                                prf_hyp_list, class_phoneme_dic)
     
     ''' Average Confidence calculation (per phonemic class) '''
     conf_dic = confidence_cal(class_phoneme_dic, prf_hyp_list, prf_conf_list)
     
     # print('2 PER calculation (per phonemic class):', time.clock() - time2)
-    phoneme_class_info = (per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub)
+    phoneme_class_info = (per_class_phoneme_dic, phoneme_class_PER, phoneme_class_Cor, phoneme_class_Del, phoneme_class_Ins, phoneme_class_Sub)
 
     return phoneme_class_info, conf_dic
 
