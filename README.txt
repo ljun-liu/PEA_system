@@ -1,3 +1,7 @@
+update 03/07/2020
+(1). add functions of drawing confusion matrix
+
+-------------------------------------------------------------------------------
 update 22/06/2020
 (1). correct some mistakes in Propre.py
 
